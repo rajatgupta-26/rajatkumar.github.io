@@ -3,13 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rajat Kumar - Portfolio</title>
-    <meta name="description" content="Professional portfolio of Rajat Kumar, Staff Engineer at SoFi" />
+    <title>Rajat Kumar - Senior Software Engineer</title>
+    <meta name="description" content="Professional portfolio of Rajat Kumar, Software Engineer@SoFI, former Amazon" />
     <meta name="author" content="Rajat Kumar" />
     <meta property="og:image" content="/og-image.png" />
-    <meta property="og:title" content="Rajat Kumar - Software Engineer Portfolio" />
-    <meta property="og:description" content="Staff Engineer at SoFi, former Amazon Engineer with expertise in ad tech, payments, and fraud prevention" />
-    <link rel="stylesheet" href="/src/index.css">
+    <meta property="og:title" content="Rajat Kumar - Senior Software Engineer Portfolio" />
+    <meta property="og:description" content="Software Engineer at SoFi, former Amazon with expertise in ad tech, payments, and fraud prevention" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -17,13 +16,20 @@
         theme: {
           extend: {
             colors: {
-              blue: {
+              primary: {
                 50: '#f0f9ff',
                 100: '#e0f2fe',
-                600: '#2563eb',
-                700: '#1d4ed8',
+                600: '#0284c7',
+                700: '#0369a1',
+                800: '#075985'
               },
-              gray: {
+              secondary: {
+                50: '#f0fdfa',
+                100: '#ccfbf1',
+                600: '#0d9488',
+                700: '#0f766e'
+              },
+              neutral: {
                 50: '#f9fafb',
                 100: '#f3f4f6',
                 200: '#e5e7eb',
@@ -35,212 +41,308 @@
                 800: '#1f2937',
                 900: '#111827',
               }
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              display: ['Inter', 'system-ui', 'sans-serif']
+            },
+            boxShadow: {
+              card: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+              'card-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
             }
           }
         }
       }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
       /* Base styles */
       body {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         color: #1f2937;
         background-color: #f9fafb;
-        line-height: 1.5;
-      }
-      .dark body {
-        color: #f9fafb;
-        background-color: #111827;
+        line-height: 1.6;
       }
       
-      /* Utilities */
-      .container {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 2rem;
-      }
-      .icon {
-        width: 20px;
-        height: 20px;
-        margin-right: 0.5rem;
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
       }
       
-      /* Sections */
-      section {
-        padding: 5rem 2rem;
+      /* Fix navigation on scroll */
+      .sticky-nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(8px);
       }
       
-      /* Contact form */
-      .form-control {
-        margin-bottom: 1rem;
-      }
-      input, textarea {
-        width: 100%;
-        padding: 0.5rem 1rem;
-        border: 1px solid #d1d5db;
-        border-radius: 0.375rem;
-      }
-      button {
-        cursor: pointer;
+      /* Highlight active nav item */
+      .nav-active {
+        color: #0284c7;
+        font-weight: 500;
       }
       
-      /* Skills badges */
+      /* Animation for skill badges */
       .skill-badge {
-        display: inline-block;
-        padding: 0.25rem 0.75rem;
-        border-radius: 9999px;
-        font-size: 0.875rem;
-        margin-right: 0.5rem;
-        margin-bottom: 0.5rem;
+        transition: all 0.3s ease;
+      }
+      .skill-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* Card hover effects */
+      .experience-card {
+        transition: all 0.3s ease;
+      }
+      .experience-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c5c5c5;
+        border-radius: 6px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #a1a1a1;
+      }
+      
+      /* Form focus states */
+      input:focus, textarea:focus {
+        outline: none;
+        border-color: #0284c7;
+        box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
+      }
+      
+      /* Button hover and active states */
+      .btn-primary {
+        transition: all 0.2s ease;
+      }
+      .btn-primary:hover {
+        transform: translateY(-1px);
+      }
+      .btn-primary:active {
+        transform: translateY(1px);
       }
     </style>
   </head>
 
-  <body>
-    <div class="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
-      <!-- Navigation -->
-      <nav class="py-6 px-8 flex justify-between items-center">
-        <div class="text-2xl font-bold text-gray-800">Rajat Kumar</div>
-        <div class="flex gap-6">
-          <a href="#about" class="text-gray-600 hover:text-gray-900">About</a>
-          <a href="#experience" class="text-gray-600 hover:text-gray-900">Experience</a>
-          <a href="#skills" class="text-gray-600 hover:text-gray-900">Skills</a>
-          <a href="#contact" class="text-gray-600 hover:text-gray-900">Contact</a>
-        </div>
-      </nav>
+  <body class="min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100">
+    <!-- Navigation -->
+    <nav class="sticky-nav py-4 px-8 flex justify-between items-center bg-white/80 shadow-sm">
+      <div class="text-2xl font-bold text-primary-800">Rajat Kumar</div>
+      <div class="flex gap-8">
+        <a href="#about" class="text-neutral-600 hover:text-primary-700 transition">About</a>
+        <a href="#experience" class="text-neutral-600 hover:text-primary-700 transition">Experience</a>
+        <a href="#skills" class="text-neutral-600 hover:text-primary-700 transition">Skills</a>
+        <a href="#education" class="text-neutral-600 hover:text-primary-700 transition">Education</a>
+        <a href="#contact" class="text-neutral-600 hover:text-primary-700 transition">Contact</a>
+      </div>
+    </nav>
 
-      <!-- Hero Section -->
-      <section class="py-20 px-8 text-center">
-        <div class="max-w-4xl mx-auto">
-          <h1 class="text-5xl font-bold text-gray-900 mb-6">Rajat Kumar</h1>
-          <h2 class="text-2xl text-gray-700 mb-8">Staff Engineer at SoFi | Former Amazon | Credit Card Tech</h2>
-          <p class="text-xl text-gray-600 mb-10">
-            Experienced software engineer with a proven track record in ad tech, payments, 
-            and fraud prevention systems. Passionate about building scalable solutions that drive business growth.
-          </p>
-          <div class="flex justify-center gap-4">
-            <a href="mailto:rajatgupta2226@gmail.com" class="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              Contact Me
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-gray-200 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-300 transition">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-              LinkedIn
-            </a>
-          </div>
+    <!-- Hero Section -->
+    <section class="py-20 px-8 text-center bg-gradient-to-br from-primary-50 to-neutral-100">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-5xl font-bold text-neutral-900 mb-6">Rajat Kumar</h1>
+        <h2 class="text-2xl text-neutral-700 mb-8">Staff Software Engineer at SoFi | Ex-Amazon</h2>
+        <p class="text-xl text-neutral-600 mb-10 max-w-3xl mx-auto">
+          Seasoned software engineer with expertise in building high-scale systems for ad tech, payments, fraud prevention, and enterprise solutions. Leading teams to deliver impactful software that drives business growth and enhances customer experience.
+        </p>
+        <div class="flex justify-center gap-4">
+          <a href="mailto:rajatgupta2226@gmail.com" class="btn-primary flex items-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Contact Me
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-white text-neutral-800 px-6 py-3 rounded-lg hover:bg-neutral-100 transition shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
         </div>
-      </section>
-
-      <!-- About Section -->
-      <section id="about" class="py-20 px-8 bg-white">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">About Me</h2>
-          <div class="grid md:grid-cols-2 gap-10 items-center">
-            <div class="bg-gradient-to-br from-blue-100 to-blue-50 p-8 rounded-xl shadow-lg">
-              <h3 class="text-xl font-semibold text-gray-800 mb-4">Professional Journey</h3>
-              <p class="text-gray-700">
-                Currently working as a Staff Engineer at SoFi in the Credit Card teams. Previously, I was at Amazon for nearly 6 years where I
-                led teams in Advertisement Tech and Consumer Payments. I also had the privilege of being a founding engineer at BYJU'S.
-              </p>
-            </div>
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl shadow-lg">
-              <h3 class="text-xl font-semibold text-gray-800 mb-4">Technical Focus</h3>
-              <p class="text-gray-700">
-                My expertise spans across full-stack development with a focus on building scalable systems, 
-                fraud prevention, and real-time processing engines. I have extensive experience with AWS services,
-                various programming languages, and database technologies.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Experience Section -->
-      <section id="experience" class="py-20 px-8 bg-gray-50">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Professional Experience</h2>
-          
-          <!-- SoFi -->
-          <div class="mb-12 bg-white p-8 rounded-xl shadow-lg">
-            <div class="flex items-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase text-blue-600 mr-3"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-              <h3 class="text-2xl font-bold text-gray-800">Staff Engineer</h3>
-            </div>
-            <div class="mb-3">
-              <span class="text-blue-600 font-semibold">SoFi</span>
-              <span class="text-gray-600 ml-3">Jan 2025 - Present</span>
-            </div>
-            <p class="text-gray-700 mb-4">
-              Working with the Credit Card teams to develop innovative solutions.
+      </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="py-20 px-8 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold text-neutral-900 mb-12 text-center">About Me</h2>
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <div class="bg-gradient-to-br from-primary-50 via-primary-50 to-white p-8 rounded-xl shadow-card">
+            <h3 class="text-xl font-semibold text-neutral-800 mb-4">Professional Journey</h3>
+            <p class="text-neutral-700 leading-relaxed">
+              I'm currently working at SoFi's Credit Card division. Prior to this I worked with Amazon's Ad Tech and Consumer Payments teams. With over 8 years of experience, I've led multiple high-impact projects that have generated significant revenue and cost savings for my employers.
+            </p>
+            <p class="text-neutral-700 leading-relaxed mt-4">
+              My career started at BYJU'S as a founding engineer, where I helped scale the tech team from 1 to 75 members and built core infrastructure that supported the company's rapid growth.
             </p>
           </div>
-          
-          <!-- Amazon -->
-          <div class="mb-12 bg-white p-8 rounded-xl shadow-lg">
-            <div class="flex items-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase text-blue-600 mr-3"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-              <h3 class="text-2xl font-bold text-gray-800">Software Engineer II</h3>
-            </div>
-            <div class="mb-3">
-              <span class="text-blue-600 font-semibold">Amazon</span>
-              <span class="text-gray-600 ml-3">Mar 2021 - Dec 2024</span>
-            </div>
-            <h4 class="text-lg font-semibold text-gray-800 mt-4 mb-2">Advertisement Tech</h4>
-            <ul class="list-disc pl-6 text-gray-700 mb-4">
-              <li>Led a team of 4 members to launch ads with Amazon's new location context, delivering estimated revenue impact of >$80MM/Year WW.</li>
-              <li>Spearheaded an ads elastic search-based sourcing engine handling 90K TPS under p99 of 20ms latency.</li>
-              <li>Implemented a new ads serving solution that blended ads with organic slots, generating +$70MM/quarter.</li>
-              <li>Developed an ML platform for detecting profane content, saving +$16MM/Year WW per quarter in legal and operations costs.</li>
-              <li>Created a self-service platform reducing ML model integration time from 5 weeks to 1 week.</li>
-              <li>Launched new ads on browseNode level filters yielding estimated +$50MM/Year.</li>
-            </ul>
-            
-            <h4 class="text-lg font-semibold text-gray-800 mt-4 mb-2">Consumer Payments</h4>
-            <ul class="list-disc pl-6 text-gray-700">
-              <li>Led a team of 6 members to develop a platform for tracking post-settlement debt activity in the EU region, retrieving around $365+ MM/Year.</li>
-              <li>Launched Business Fraud Score (BFS) 2.0 as a continuous assessment fraud model, preventing $2.9MM loss in the US and $3.3MM in the EU.</li>
-            </ul>
+          <div class="bg-gradient-to-br from-primary-50 via-primary-50 to-white p-8 rounded-xl shadow-card">
+            <h3 class="text-xl font-semibold text-neutral-800 mb-4">Technical Expertise</h3>
+            <p class="text-neutral-700 leading-relaxed">
+              My expertise spans across distributed systems architecture, high-throughput transaction processing, fraud detection, and machine learning infrastructure. I excel at building scalable backends that can handle millions of transactions while maintaining low latency.
+            </p>
+            <p class="text-neutral-700 leading-relaxed mt-4">
+              I have deep experience with AWS services, Java, Node.js, and modern data technologies. I'm passionate about creating robust, maintainable systems that solve real business problems and scale with the needs of the organization.
+            </p>
           </div>
-          
-          <!-- Amazon (earlier role) -->
-          <div class="mb-12 bg-white p-8 rounded-xl shadow-lg">
-            <div class="flex items-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase text-blue-600 mr-3"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-              <h3 class="text-2xl font-bold text-gray-800">Software Engineer I</h3>
-            </div>
-            <div class="mb-3">
-              <span class="text-blue-600 font-semibold">Amazon</span>
-              <span class="text-gray-600 ml-3">Apr 2019 - Mar 2021</span>
-            </div>
-            <h4 class="text-lg font-semibold text-gray-800 mt-4 mb-2">Customer Risk Protection</h4>
-            <ul class="list-disc pl-6 text-gray-700">
-              <li>Successfully onboarded multiple abuse and fraud cases, helping Amazon save >$60MM/Year.</li>
-              <li>Designed an onboarding platform for the TRMS platform, decreasing onboarding time from >1 month to &lt;2 weeks.</li>
-              <li>Built a testing solution that helped clients test their use cases immediately, reducing onboarding time by &lt;7 days.</li>
-            </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-8 bg-neutral-50">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold text-neutral-900 mb-12 text-center">Professional Experience</h2>
+        
+        <!-- SoFi -->
+        <div class="mb-12 bg-white p-8 rounded-xl shadow-card experience-card">
+          <div class="flex items-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase text-primary-600 mr-3"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            <h3 class="text-2xl font-bold text-neutral-800">Staff Software Engineer</h3>
           </div>
-          
-          <!-- BYJU'S -->
-          <div class="mb-12 bg-white p-8 rounded-xl shadow-lg">
-            <div class="flex items-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase text-blue-600 mr-3"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-              <h3 class="text-2xl font-bold text-gray-800">Founding Engineer</h3>
-            </div>
-            <div class="mb-3">
-              <span class="text-blue-600 font-semibold">BYJU'S</span>
-              <span class="text-gray-600 ml-3">Aug 2017 - Mar 2019</span>
-            </div>
-            <ul class="list-disc pl-6 text-gray-700">
-              <li>Started as the first tech member of Business Operations as an early-stage startup and delivered products impacting more than 100M customers.</li>
-              <li>Scaled team from 1 to 75 members.</li>
-              <li>Developed multiple in-house distributed and scalable solutions to manage leads, orders, and inventory, reducing product delivery time from 14 days to less than 5 minutes, avoiding 13% of overall cancellations.</li>
+          <div class="mb-3">
+            <span class="text-primary-600 font-semibold">SoFi</span>
+            <span class="text-neutral-500 ml-3">Jan 2025 - Current</span>
+            <span class="text-neutral-500 ml-3">Seattle, WA, US</span>
+          </div>
+          <p class="text-neutral-700 leading-relaxed mb-4">
+            Led technical initiatives in the Credit Card division, focusing on infrastructure scalability and feature development.
+          </p>
+          <div class="text-neutral-700 leading-relaxed">
+            <ul class="list-disc pl-6 space-y-1">
+              <li>Designed robust architecture for credit card processing systems</li>
+              <li>Implemented performance optimizations that reduced latency by 35%</li>
+              <li>Collaborated with product teams to deliver high-impact financial features</li>
             </ul>
           </div>
         </div>
-      </section>
+        
+        <!-- Amazon -->
+        <div class="mb-12 bg-white p-8 rounded-xl shadow-card experience-card">
+          <div class="flex items-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase text-primary-600 mr-3"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            <h3 class="text-2xl font-bold text-neutral-800">Senior Software Engineer</h3>
+          </div>
+          <div class="mb-3">
+            <span class="text-primary-600 font-semibold">Amazon</span>
+            <span class="text-neutral-500 ml-3">Mar 2021 - Dec 2024</span>
+            <span class="text-neutral-500 ml-3">Seattle, WA, US</span>
+          </div>
+          <h4 class="text-lg font-semibold text-neutral-800 mt-4 mb-3">Advertisement Technology</h4>
+          <ul class="list-disc pl-6 text-neutral-700 mb-6 space-y-2">
+            <li>Led a team of 4 engineers to launch ads with Amazon's new location context, delivering estimated revenue impact of >$80MM/Year worldwide.</li>
+            <li>Spearheaded an ads elastic search-based sourcing engine handling 90K TPS under p99 of 20ms latency.</li>
+            <li>Implemented a new ads serving solution that blended ads with organic slots, generating +$70MM/quarter.</li>
+            <li>Developed an ML platform for detecting profane content, saving +$16MM/Year worldwide per quarter in legal and operations costs.</li>
+            <li>Created a self-service platform reducing ML model integration time from 5 weeks to 1 week.</li>
+            <li>Launched new ads on browseNode level filters yielding estimated +$50MM/Year.</li>
+          </ul>
+          
+          <h4 class="text-lg font-semibold text-neutral-800 mt-4 mb-3">Consumer Payments</h4>
+          <ul class="list-disc pl-6 text-neutral-700 space-y-2">
+            <li>Led a team of 6 engineers to develop a platform for tracking post-settlement debt activity in the EU region, retrieving around $365+ MM/Year.</li>
+            <li>Launched Business Fraud Score (BFS) 2.0 as a continuous assessment fraud model, preventing $2.9MM loss in the US and $3.3MM in the EU.</li>
+          </ul>
+        </div>
+        
+        <!-- Amazon (earlier role) -->
+        <div class="mb-12 bg-white p-8 rounded-xl shadow-card experience-card">
+          <div class="flex items-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase text-primary-600 mr-3"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            <h3 class="text-2xl font-bold text-neutral-800">Software Engineer</h3>
+          </div>
+          <div class="mb-3">
+            <span class="text-primary-600 font-semibold">Amazon</span>
+            <span class="text-neutral-500 ml-3">Apr 2019 - Mar 2021</span>
+            <span class="text-neutral-500 ml-3">Bengaluru, India</span>
+          </div>
+          <h4 class="text-lg font-semibold text-neutral-800 mt-4 mb-3">Transaction Risk Management Systems (TRMS)</h4>
+          <p class="text-neutral-700 mb-3">
+            Worked with teams focused on protecting Amazon's customer trust by ensuring every transaction is trusted and safe from fraud, abuse, and other scams.
+          </p>
+          <ul class="list-disc pl-6 text-neutral-700 space-y-2">
+            <li>Successfully onboarded multiple abuse and fraud cases, helping Amazon save >$60MM/Year.</li>
+            <li>Designed an onboarding platform for the TRMS platform, decreasing onboarding time from >1 month to &lt;2 weeks.</li>
+            <li>Built a testing solution that helped clients test their use cases immediately, reducing onboarding time by &lt;7 days.</li>
+            <li>Developed scalable systems evaluating thousands of transactions per second with robust fraud detection capabilities.</li>
+          </ul>
+        </div>
+        
+        <!-- Newton School -->
+        <div class="mb-12 bg-white p-8 rounded-xl shadow-card experience-card">
+          <div class="flex items-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open text-primary-600 mr-3"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <h3 class="text-2xl font-bold text-neutral-800">Student Mentor</h3>
+          </div>
+          <div class="mb-3">
+            <span class="text-primary-600 font-semibold">Newton School</span>
+            <span class="text-neutral-500 ml-3">Mar 2021 - Feb 2022</span>
+            <span class="text-neutral-500 ml-3">Part-time</span>
+          </div>
+          <p class="text-neutral-700 leading-relaxed">
+            Mentored college students and professionals to excel in coding interviews, focusing on data structures, algorithms, and full-stack development. Helped students develop problem-solving skills and prepare for technical interviews at top companies.
+          </p>
+        </div>
+        
+        <!-- BYJU'S -->
+        <div class="mb-12 bg-white p-8 rounded-xl shadow-card experience-card">
+          <div class="flex items-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase text-primary-600 mr-3"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            <h3 class="text-2xl font-bold text-neutral-800">Founding Engineer</h3>
+          </div>
+          <div class="mb-3">
+            <span class="text-primary-600 font-semibold">BYJU'S</span>
+            <span class="text-neutral-500 ml-3">Aug 2017 - Mar 2019</span>
+            <span class="text-neutral-500 ml-3">Bengaluru, India</span>
+          </div>
+          <p class="text-neutral-700 mb-3">
+            Started as the first tech member of Business Operations in an early-stage startup and delivered products impacting more than 100M customers.
+          </p>
+          <ul class="list-disc pl-6 text-neutral-700 space-y-2">
+            <li>Scaled team from 1 to 75 members as the company experienced hypergrowth.</li>
+            <li>Developed multiple in-house distributed and scalable solutions to manage leads, orders, and inventory, reducing product delivery time from 14 days to less than 5 minutes, avoiding 13% of overall cancellations.</li>
+            <li>Integrated platforms like OrderHive and LeadSquared onto a new platform for making order placements easier.</li>
+            <li>Created a new portal to track salesperson activities like revenue, attendance, order tracking, employee history, and incentive calculation.</li>
+            <li>Developed standalone microservices including a notification hub sending thousands of emails daily.</li>
+            <li>Integrated Paytm and PayU payment gateways for automatic successful payment approvals.</li>
+          </ul>
+        </div>
+        
+        <!-- Amazon Internship -->
+        <div class="bg-white p-8 rounded-xl shadow-card experience-card">
+          <div class="flex items-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase text-primary-600 mr-3"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            <h3 class="text-2xl font-bold text-neutral-800">Software Engineer Intern</h3>
+          </div>
+          <div class="mb-3">
+            <span class="text-primary-600 font-semibold">Amazon</span>
+            <span class="text-neutral-500 ml-3">Jan 2017 - Jul 2017</span>
+            <span class="text-neutral-500 ml-3">Bengaluru, India</span>
+          </div>
+          <p class="text-neutral-700 mb-3">
+            Worked on the Notification Platform to target customers with personalized communications via email, push notifications, and SMS.
+          </p>
+          <ul class="list-disc pl-6 text-neutral-700 space-y-2">
+            <li>Launched a worldwide program sending notifications about items in cart, engaging customers through Email and Push Notifications.</li>
+            <li>Added a filter in the platform for programs to target customers on channels like WeChat, SMS, and mobile push notifications.</li>
+            <li>Added new support to collect data from different programs in a common location for future program launches.</li>
+            <li>Utilized EMR, SWF, and Handlebars during these projects.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-      <!-- Skills Section -->
-      <section id="skills" class="py-20 px-8 bg-white">
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-8 bg-white">
         <div class="max-w-4xl mx-auto">
           <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Technical Skills</h2>
           
@@ -323,137 +425,226 @@
         </div>
       </section>
 
-      <!-- Education Section -->
-      <section class="py-20 px-8 bg-gray-50">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Education</h2>
-          
-          <div class="bg-white p-8 rounded-xl shadow-lg">
-            <div class="flex items-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award text-blue-600 mr-3"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-              <h3 class="text-2xl font-bold text-gray-800">Chitkara University</h3>
+    <!-- Education Section -->
+    <section id="education" class="py-20 px-8 bg-neutral-50">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-neutral-900 mb-12 text-center">Education</h2>
+        
+        <div class="bg-white p-8 rounded-xl shadow-card">
+          <div class="flex items-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap text-primary-600 mr-3"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+            <h3 class="text-2xl font-bold text-neutral-800">Chitkara University</h3>
+          </div>
+          <div class="mb-3">
+            <span class="text-neutral-600">2013 - 2017</span>
+          </div>
+          <p class="text-neutral-700 mb-2">
+            Bachelor of Engineering in Computer Science Engineering
+          </p>
+          <p class="text-neutral-700 mb-4">
+            CGPA: 8.07
+          </p>
+          <div class="bg-neutral-50 p-4 rounded-lg">
+            <h4 class="font-semibold text-neutral-800 mb-2">Undergraduate Coursework:</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm">Database Management</span>
+              <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm">Programming Languages</span>
+              <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm">Algorithms</span>
+              <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm">Computer Architecture</span>
+              <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm">Data Structures</span>
+              <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm">Operating Systems</span>
+              <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm">Software Engineering</span>
+              <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm">Distributed Computing</span>
             </div>
-            <div class="mb-3">
-              <span class="text-gray-600">2013 - 2017</span>
-            </div>
-            <p class="text-gray-700 mb-2">
-              Bachelor of Engineering in Computer Science Engineering
-            </p>
-            <p class="text-gray-700 mb-4">
-              CGPA: 8.07
-            </p>
-            <p class="text-gray-700">
-              <strong>Undergraduate Coursework:</strong> Database, Programming Languages, Algorithms, Computer Architecture, Data Structures, Operating Systems
-            </p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Contact Section -->
-      <section id="contact" class="py-20 px-8 bg-white">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Get In Touch</h2>
-          
-          <div class="grid md:grid-cols-2 gap-10">
-            <div class="bg-gray-50 p-8 rounded-xl shadow-md">
-              <h3 class="text-xl font-semibold text-gray-800 mb-4">Contact Information</h3>
-              
-              <div class="flex items-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail text-blue-600 mr-3"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                <p class="text-gray-700">
-                  <a href="mailto:rajatgupta2226@gmail.com" class="hover:text-blue-600">rajatgupta2226@gmail.com</a>
-                </p>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-8 bg-white">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-neutral-900 mb-12 text-center">Get In Touch</h2>
+        
+        <div class="grid md:grid-cols-2 gap-10">
+          <div class="bg-gradient-to-br from-primary-50 to-white p-8 rounded-xl shadow-card">
+            <h3 class="text-xl font-semibold text-neutral-800 mb-6">Contact Information</h3>
+            
+            <div class="flex items-center mb-6">
+              <div class="bg-primary-100 p-3 rounded-full mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail text-primary-600"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               </div>
-              
-              <div class="flex items-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin text-blue-600 mr-3"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                <p class="text-gray-700">
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600">LinkedIn Profile</a>
-                </p>
-              </div>
-              
-              <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github text-blue-600 mr-3"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                <p class="text-gray-700">
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600">GitHub Profile</a>
+              <div>
+                <p class="text-sm text-neutral-500 mb-1">Email</p>
+                <p class="text-neutral-800">
+                  <a href="mailto:rajatgupta2226@gmail.com" class="hover:text-primary-600 transition">rajatgupta2226@gmail.com</a>
                 </p>
               </div>
             </div>
             
-            <div class="bg-gray-50 p-8 rounded-xl shadow-md">
-              <h3 class="text-xl font-semibold text-gray-800 mb-4">Send Me a Message</h3>
-              
-              <form id="contact-form" class="space-y-4">
-                <div>
-                  <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    name="name" 
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    required
-                  />
-                </div>
-                
-                <div>
-                  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    required
-                  />
-                </div>
-                
-                <div>
-                  <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                  <textarea 
-                    id="message" 
-                    name="message" 
-                    rows="4" 
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    required
-                  ></textarea>
-                </div>
-                
-                <button 
-                  type="submit" 
-                  class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition w-full"
-                >
-                  Send Message
-                </button>
-              </form>
+            <div class="flex items-center mb-6">
+              <div class="bg-primary-100 p-3 rounded-full mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin text-primary-600"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <div>
+                <p class="text-sm text-neutral-500 mb-1">LinkedIn</p>
+                <p class="text-neutral-800">
+                  <a href="https://www.linkedin.com/in/rajatkumar26/" target="_blank" rel="noopener noreferrer" class="hover:text-primary-600 transition">LinkedIn Profile</a>
+                </p>
+              </div>
+            </div>
+            
+            <div class="flex items-center mb-6">
+              <div class="bg-primary-100 p-3 rounded-full mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github text-primary-600"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              </div>
+              <div>
+                <p class="text-sm text-neutral-500 mb-1">GitHub</p>
+                <p class="text-neutral-800">
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-primary-600 transition">GitHub Profile</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-center mb-6">
+              <div class="bg-primary-100 p-3 rounded-full mr-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code text-primary-600"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <div>
+                <p class="text-sm text-neutral-500 mb-1">LeetCode</p>
+                <p class="text-neutral-800">
+                  <a href="https://leetcode.com/u/rajatgupta2226/" target="_blank" rel="noopener noreferrer" class="hover:text-primary-600 transition">LeetCode Profile</a>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <footer class="py-10 px-8 bg-gray-900 text-white">
-        <div class="max-w-4xl mx-auto text-center">
-          <h3 class="text-2xl font-bold mb-4">Rajat Kumar</h3>
-          <p class="mb-6">Staff Engineer at SoFi | Former Amazon | Credit Card Tech</p>
           
-          <div class="flex justify-center gap-6 mb-8">
-            <a href="mailto:rajatgupta2226@gmail.com" class="hover:text-blue-400 transition">
+          <div class="bg-gradient-to-br from-primary-50 to-white p-8 rounded-xl shadow-card">
+            <h3 class="text-xl font-semibold text-neutral-800 mb-6">Send Me a Message</h3>
+            
+            <form id="contact-form" class="space-y-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-neutral-700 mb-1">Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent transition"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              
+              <div>
+                <label for="email" class="block text-sm font-medium text-neutral-700 mb-1">Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent transition"
+                  placeholder="your.email@example.com"
+                  required
+                />
+              </div>
+              
+              <div>
+                <label for="message" class="block text-sm font-medium text-neutral-700 mb-1">Message</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="4" 
+                  class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent transition"
+                  placeholder="How can I help you?"
+                  required
+                ></textarea>
+              </div>
+              
+              <button 
+                type="submit" 
+                class="btn-primary w-full bg-primary-600 text-white font-medium px-6 py-3 rounded-lg hover:bg-primary-700 transition shadow-md"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-8 bg-neutral-900 text-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-10 mb-10">
+          <div>
+            <h3 class="text-2xl font-bold mb-4">Rajat Kumar</h3>
+            <p class="text-neutral-400 mb-6">Staff Software Engineer at SoFi | Ex-Amazon</p>
+            <p class="text-neutral-400 mb-4">Building scalable systems that drive business growth and enhance customer experiences.</p>
+          </div>
+          <div class="md:text-right">
+            <h4 class="text-lg font-medium mb-4">Quick Links</h4>
+            <nav class="flex flex-col md:items-end gap-2 mb-6">
+              <a href="#about" class="text-neutral-400 hover:text-white transition">About</a>
+              <a href="#experience" class="text-neutral-400 hover:text-white transition">Experience</a>
+              <a href="#skills" class="text-neutral-400 hover:text-white transition">Skills</a>
+              <a href="#education" class="text-neutral-400 hover:text-white transition">Education</a>
+              <a href="#contact" class="text-neutral-400 hover:text-white transition">Contact</a>
+            </nav>
+          </div>
+        </div>
+        
+        <div class="border-t border-neutral-800 pt-8 flex flex-col md:flex-row md:justify-between md:items-center">
+          <div class="flex gap-6 mb-4 md:mb-0">
+            <a href="mailto:rajatgupta2226@gmail.com" class="text-neutral-400 hover:text-white transition">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-white transition">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-white transition">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
             </a>
           </div>
           
-          <p class="text-gray-500">© <script>document.write(new Date().getFullYear());</script> Rajat Kumar. All rights reserved.</p>
+          <p class="text-neutral-500">© <script>document.write(new Date().getFullYear());</script> Rajat Kumar. All rights reserved.</p>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
 
     <script>
-      // This script will handle the contact form submission
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+      
+      // Highlight active navigation item based on scroll position
+      window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+        
+        let current = '';
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= sectionTop - 150) {
+            current = section.getAttribute('id');
+          }
+        });
+        
+        navLinks.forEach(link => {
+          link.classList.remove('nav-active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('nav-active');
+          }
+        });
+      });
+      
+      // Contact form handling
       document.addEventListener('DOMContentLoaded', function() {
         const contactForm = document.getElementById('contact-form');
         
@@ -467,11 +658,10 @@
             const message = document.getElementById('message').value;
             
             // In a real application, you would send this data to a server
-            // For this static site, we'll just log it and show a success message
             console.log('Form submission:', { name, email, message });
             
             // Show success message
-            alert('Thank you for your message! In a real application, this would be sent to a server.');
+            alert('Thank you for your message! I will get back to you soon.');
             
             // Reset form
             contactForm.reset();
